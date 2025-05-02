@@ -1,134 +1,132 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles.css */
 
-/* Body styling */
+/* Smooth font rendering */
 body {
-    transition: background-color 0.5s ease, color 0.5s ease;
-    font-family: Arial, sans-serif;
-    background-color: rgb(28, 66, 121);
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
-/* Dark mode */
-body.dark-mode {
-    background-color: #121212;
-    color: white;
+/* Section heading styles */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f8f9fa;
 }
 
-/* Navigation bar */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Lead paragraph styling */
+.lead {
+    font-size: 1.2rem;
+    color: #ced4da;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
-
-#darkModeToggle {
-    background: none;
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+    border-radius: 12px;
 }
 
-/* Sections */
-.section {
-    padding: 50px 20px;
-    text-align: center;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Profile image */
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 20px 0;
+/* Card images with rounded corners */
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: teal;
-    color: white;
+/* Adjust navbar brand for better visibility */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #f8f9fa !important;
+}
+
+/* Nav link active and hover styles */
+.nav-link {
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Email links styled for clarity */
+a.text-info {
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    padding-right: 35px;
 }
 
-/* Skills List */
-.skills-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+a.text-info:hover {
+    text-decoration: underline;
+    color: #0dcaf0;
 }
 
-.skills-list li {
-    margin: 10px;
-}
-
-/* Contact Form */
-#contact-form form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-
-#contact-form input,
-#contact-form textarea {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-}
-
-/* Footer */
-footer {
-    text-align: center;
+.team-member {
     padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
+    background-color: #212529; /* dark card-like background */
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .nav-links {
-        flex-direction: column;
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.team-member img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #6c757d;
+    margin-bottom: 15px;
+    object-position: top;
+}
+
+.team-member h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 0.95rem;
+    color: #ced4da;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-}
-
-/* Fade-in Animation */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    visibility: hidden;
-}
-
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-}
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply the animation */
+  .fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0; /* Start invisible until animation completes */
+  }
+  
+  /* Optional: staggered effect */
+  .fade-in.delay-1 { animation-delay: 0.2s; }
+  .fade-in.delay-2 { animation-delay: 0.4s; }
+  .fade-in.delay-3 { animation-delay: 0.6s; }
+  .fade-in.delay-4 { animation-delay: 0.8s; }
+  .fade-in.delay-5 { animation-delay: 1s; }
+  
